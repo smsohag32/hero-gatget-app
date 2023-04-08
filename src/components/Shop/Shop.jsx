@@ -7,8 +7,6 @@ const Shop = () => {
   const productsData = useLoaderData();
   //   card button handler
   const handleAddToCart = (id) => {
-    console.log(id);
-
     addToDb(id);
   };
   return (
