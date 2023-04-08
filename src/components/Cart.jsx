@@ -4,6 +4,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import CartItem from "./Cards/CartItem";
 import { deleteShoppingCart, removeFromDb } from "../Utils/fakeDb";
 import { CartContext } from "../App";
+import { toast } from "react-hot-toast";
 
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext);
@@ -23,10 +24,26 @@ const Cart = () => {
     removeFromDb(id);
   };
 
+  // place handler
+
+  const orderHandler = () => {
+    if (cart.length > 0) {
+      setCart([]);
+      deleteShoppingCart();
+      return toast.success("Order Done 🔥");
+    }
+    return toast.error("Cart EMPTY! ⚠️");
+  };
+
   // delete shopping cart handle clear cart
 
   const deleteCart = () => {
-    deleteShoppingCart();
+    if (cart.length > 0) {
+      setCart([]);
+      deleteShoppingCart();
+      return toast.success("All items removed 🔥");
+    }
+    return toast.error("Cart is EMPTY! ⚠️");
   };
   return (
     <div className="flex min-h-screen items-start justify-center bg-gray-100 text-gray-900">
@@ -58,7 +75,9 @@ const Cart = () => {
               <button className="btn-outlined">Back To Shop</button>
             </Link>
           )}
-          <button className="btn-primary">Place Order</button>
+          <button onClick={orderHandler} className="btn-primary">
+            Place Order
+          </button>
         </div>
       </div>
     </div>

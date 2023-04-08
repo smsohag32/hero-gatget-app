@@ -9,6 +9,7 @@ import About from "./components/About";
 import Shop from "./components/Shop/Shop";
 import Cart from "./components/Cart";
 import { productsAndCartData } from "./Loaders/getCartAndProductData";
+import { Toaster } from "react-hot-toast";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,16 +28,17 @@ const router = createBrowserRouter([
       {
         path: "shop",
         element: <Shop />,
-        loader: () => fetch("products.json"),
       },
       {
         path: "cart",
         element: <Cart />,
-        loader: productsAndCartData,
       },
     ],
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router}></RouterProvider>
+  <>
+    <Toaster />
+    <RouterProvider router={router}></RouterProvider>
+  </>
 );
