@@ -22,6 +22,7 @@ const Cart = () => {
     const remaining = cart.filter((product) => product.id !== id);
     setCart(remaining);
     removeFromDb(id);
+    toast.error("Products Removed !!");
   };
 
   // place handler

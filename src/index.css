@@ -22,7 +22,7 @@
   }
   
   .default{
-    @apply font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-cyan-600
+    @apply font-medium tracking-wide text-gray-200 transition-colors duration-200 hover:text-cyan-600
   }
 @layer utilities{
   .title-text{
