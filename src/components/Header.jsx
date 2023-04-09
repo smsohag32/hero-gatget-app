@@ -155,10 +155,10 @@ const Header = () => {
                       >
                         <div className="relative py-3">
                           <ShoppingCartIcon className="h-6 w-6 text-cyan-400" />
+                          <p className="absolute top-0 text-gray-700 left-6 text-base">
+                            {cart.length}
+                          </p>
                         </div>
-                        <p className="absolute top-0 left-6 text-base">
-                          {cart.length}
-                        </p>
                       </Link>
                     </li>
                     <li>

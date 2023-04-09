@@ -10,7 +10,7 @@ const Home = () => {
           <h1 className="text-2xl w-full lg:leading-tight sm:text-4xl lg:text-6xl lg:max-w-3xl title-text">
             Welcome To HeroGadget
           </h1>
-          <p className="my-6 text-xs sm:text-base md:text-lg max-w-2/3 md:max-w-xl max-w-2xl text-gray-900">
+          <p className="my-6 text-xs sm:text-base md:text-lg max-w-2/3 md:max-w-xl max-w-2xl text-gray-100">
             Best E-commerce platform for buying high quality Smart Home
             Appliances at extremely affordable Price.
           </p>
